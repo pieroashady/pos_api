@@ -1,4 +1,4 @@
-package com.exyna.pos_api.entity;
+package com.exyna.pos_api;
 
 import java.io.Serializable;
 import java.util.Date;

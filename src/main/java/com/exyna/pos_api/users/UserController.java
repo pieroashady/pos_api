@@ -1,4 +1,4 @@
-package com.exyna.pos_api.module.users;
+package com.exyna.pos_api.users;
 
 import java.util.List;
 
@@ -11,26 +11,24 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.exyna.pos_api.users.internal.Users;
+
 @RestController
 @RequestMapping("/users")
 public class UserController {
 
     @Autowired
-    UserRepository userRepository;
+    UserService userService;
 
     @GetMapping()
     public ResponseEntity<List<Users>> find() {
-        List<Users> users = userRepository.findAll();
+        List<Users> users = userService.findAll();
         return new ResponseEntity<List<Users>>(users, HttpStatus.OK);
     }
 
     @PostMapping()
     public ResponseEntity<Users> create(@RequestBody Users data) {
-        Users user = new Users();
-        user.setFullName(data.getFullName());
-        user.setPassword(data.getPassword());
-        user.setUsername(data.getUsername());
-        Users save = userRepository.save(user);
+        Users save = userService.save(data);
         return new ResponseEntity<Users>(save, HttpStatus.CREATED);
     }
 

@@ -1,4 +1,4 @@
-package com.exyna.pos_api.module.users;
+package com.exyna.pos_api.users.internal;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -14,8 +14,8 @@ import java.util.UUID;
 import org.hibernate.annotations.JdbcTypeCode;
 import org.hibernate.annotations.UuidGenerator;
 
-import com.exyna.pos_api.entity.DateAudit;
-import com.exyna.pos_api.module.authorities.Authorities;
+import com.exyna.pos_api.DateAudit;
+import com.exyna.pos_api.authorities.Authorities;
 
 @Entity
 public class Users extends DateAudit {

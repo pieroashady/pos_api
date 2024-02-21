@@ -1,4 +1,4 @@
-package com.exyna.pos_api.security;
+package com.exyna.pos_api;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
